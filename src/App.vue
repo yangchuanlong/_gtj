@@ -5,13 +5,10 @@
 </template>
 
 <script>
-import Sidebar from './components/Sidebar.vue';
-
 
 export default {
   name: 'app',
   components: {
-    Sidebar,
   },
   data:function () {
       return {
