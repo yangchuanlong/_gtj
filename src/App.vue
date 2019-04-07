@@ -1,31 +1,20 @@
 <template>
-  <el-container id="app" class="app">
-    <el-header class="headerWrapper">
-      <Header :systemName="systemName"/>
-    </el-header>
-    <el-container>
-      <!--<HelloWorld msg="Welcome to Your Vue.js App， App.vue"/>-->
-      <router-view></router-view>
-    </el-container>
-  </el-container>
+  <div id="app" class="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import config from './config.js';
-import HelloWorld from './components/HelloWorld.vue';
 import Sidebar from './components/Sidebar.vue';
-import Header from './components/Header.vue';
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
     Sidebar,
-    Header,
   },
   data:function () {
       return {
-          systemName: config.systemName
       }
   }
 }
