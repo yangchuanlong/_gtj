@@ -7,9 +7,34 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      redirect: 'home'
+    },
+    {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [{
+        path: 'overview',
+        alias: '',
+        component: () => import("./views/pages/overview.vue")
+      }, {
+        path: 'current-situation',
+        component: () => import("./views/pages/currentSituation.vue")
+      }, {
+        path: 'ledger',
+        component: () => import("./views/pages/ledger.vue")
+      },
+      {
+        path: 'data-center',
+        component: () => import("./views/pages/dataCenter.vue")
+      }, {
+        path: 'auxiliary-analyse',
+        component: () => import("./views/pages/auxiliaryAnalyse.vue")
+      }, {
+        path: 'document',
+        component: () => import("./views/pages/document.vue")
+      }]
     },
     {
       path: '/about',
