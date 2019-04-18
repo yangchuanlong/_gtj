@@ -29,7 +29,12 @@
             <el-form-item
                 label=""
             >
-                <el-button type="primary" @click="submit('loginData')" class="loginBtn">登录</el-button>
+                <el-button
+                        type="primary"
+                        @click="submit('loginData')"
+                        class="loginBtn"
+                        :loading="loading"
+                >登录</el-button>
             </el-form-item>
 
         </el-form>
@@ -49,11 +54,18 @@
                 systemName: config.systemName
             }
         },
+        computed: {
+            loading: function () {
+                return this.$store.state.login.loading
+            }
+        },
         methods: {
             submit(formName){
+                const _t = this;
                 this.$refs[formName].validate(valid => {
                     if(valid) {
-
+                        console.log(_t.loginData)
+                        _t.$store.dispatch('login/login', {..._t.loginData})
                     }
                 })
             }

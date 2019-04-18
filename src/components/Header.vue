@@ -16,14 +16,22 @@
 </template>
 
 <script>
+    import Cookies from 'js-cookie';
+    import router from '../router';
     export default {
         name: "Header",
         props: {
             systemName: String
         },
         methods: {
-            handleMenuItemClick(evt) {
-                console.log(evt)
+            handleMenuItemClick(action) {
+                if(action === 'logout') {
+                    Object.keys(Cookies.get()).forEach(function(cookie) {
+                        const attributes = {};
+                        Cookies.remove(cookie, attributes);
+                        router.push('/login');
+                    });
+                }
             }
         }
     }
