@@ -57,5 +57,7 @@
 </script>
 
 <style scoped>
-
+    .chart-page-main{
+        flex: 1;
+    }
 </style>
