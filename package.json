@@ -13,6 +13,7 @@
     "echarts": "^4.2.1",
     "element-ui": "^2.4.5",
     "js-cookie": "^2.2.0",
+    "ol": "^5.3.3",
     "vue": "^2.6.6",
     "vue-echarts": "^4.0.1",
     "vue-router": "^3.0.1",
